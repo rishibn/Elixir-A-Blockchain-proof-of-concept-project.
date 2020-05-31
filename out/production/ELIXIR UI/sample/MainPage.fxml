@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainPageController">
+   <bottom>
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+            <Label text=" ELIXIR: A Blockchain proof of concept project." />
+         </children>
+      </HBox>
+   </bottom>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+         <menus>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem fx:id="aboutButton" mnemonicParsing="false" onAction="#aboutButtonClicked" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <Pane prefHeight="707.0" prefWidth="169.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextArea fx:id="counterTextArea" editable="false" layoutX="14.0" layoutY="354.0" prefHeight="137.0" prefWidth="159.0" />
+            <Button fx:id="startTransactionsButton" layoutX="27.0" layoutY="296.0" mnemonicParsing="false" onAction="#startTransactionsButtonClicked" prefHeight="44.0" prefWidth="131.0" text="Start Transactions" />
+            <Button fx:id="invalidTransactionsButton" layoutX="14.0" layoutY="571.0" mnemonicParsing="false" onAction="#invalidTransactionsButtonClicked" prefHeight="44.0" prefWidth="159.0" text="Show Invalid Transactions" />
+            <Label layoutX="14.0" layoutY="55.0" text="Select Difficulty:" />
+            <ComboBox fx:id="difficultyComboBox" layoutX="108.0" layoutY="51.0" prefHeight="25.0" prefWidth="0.0" />
+            <Slider fx:id="transactionSlider" blockIncrement="1.0" layoutX="23.0" layoutY="150.0" majorTickUnit="20.0" min="20.0" minorTickCount="5" showTickLabels="true" showTickMarks="true" value="5.0" />
+            <Label layoutX="29.0" layoutY="123.0" text="Number of transactions:" />
+            <Button fx:id="resetButton" layoutX="26.0" layoutY="631.0" mnemonicParsing="false" onAction="#resetButtonClicked" prefHeight="44.0" prefWidth="133.0" text="RESET" />
+            <Label layoutX="29.0" layoutY="208.0" text="Number of wallets:" />
+            <Slider fx:id="walletSlider" blockIncrement="5.0" layoutX="23.0" layoutY="236.0" majorTickUnit="5.0" max="25.0" min="5.0" minorTickCount="2" showTickLabels="true" showTickMarks="true" />
+            <Button fx:id="blockchainSummaryButton" layoutX="13.0" layoutY="509.0" mnemonicParsing="false" onAction="#blockchainSummaryButtonClicked" prefHeight="44.0" prefWidth="159.0" text="Print Blockchain Summary" />
+         </children>
+      </Pane>
+   </left>
+   <center>
+      <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="707.0" prefWidth="727.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextArea fx:id="outputTextarea" editable="false" layoutX="13.0" layoutY="14.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="300.0" prefHeight="686.0" prefWidth="813.0" promptText="Output Area" />
+         </children>
+      </Pane>
+   </center>
+</BorderPane>
